@@ -1,0 +1,38 @@
+.nav-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Covers entire area */
+  background-position: center; /* Centered image */
+  background-repeat: no-repeat;
+  background-image: url("/Users/imswornim/Documents/SideProjects/sendeasy-client/src/assets/mainLogo.png");
+}
+
+
+.heroSection {
+  padding: 30px;
+  color: white;
+  height: 400px;
+  background-image: url("./assets/rainy.jpg");
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  
+}
+.redText {
+  color: orange;
+}
