@@ -1,10 +1,9 @@
-import "./App.css";
 import HomePage from "./Pages/HomePage";
+import "./App.css";
 
 function App() {
   return (
     <>
-      This is the best app in the world
       <HomePage />
     </>
   );
