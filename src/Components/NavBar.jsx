@@ -6,6 +6,8 @@ const NavBar = () => {
       <div className="logo"></div>
       <div>Popular</div>
       <div>Festival</div>
+      <div>Announcement</div>
+
       <div>
         <SearchBar propPlaceholder={"Search by keyword or categoty"} />
       </div>
