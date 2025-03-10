@@ -6,6 +6,8 @@
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 20px;
+  font-weight: bold;
+  color: grey;
 }
 
 .logo {
@@ -20,7 +22,6 @@
   background-image: url("/Users/imswornim/Documents/SideProjects/sendeasy-client/src/assets/mainLogo.png");
 }
 
-
 .heroSection {
   padding: 30px;
   color: white;
@@ -31,8 +32,11 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  
 }
 .redText {
   color: orange;
+}
+
+.cardContainer {
+  padding: 30px;
 }

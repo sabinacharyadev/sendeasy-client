@@ -1,3 +1,4 @@
+import DisplayCard from "../Components/EmailDisplayCard";
 import NavBar from "../Components/NavBar";
 
 const HomePage = () => {
@@ -19,6 +20,9 @@ const HomePage = () => {
           </h4>
         </div>
         <div>Explore more</div>
+      </div>
+      <div className="cardContainer">
+        <DisplayCard />
       </div>
     </div>
   );
