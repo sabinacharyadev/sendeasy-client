@@ -8,6 +8,10 @@
   padding-top: 20px;
   font-weight: bold;
   color: grey;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999; /* Make sure it stays above content */
 }
 
 .logo {
@@ -46,6 +50,7 @@
 }
 
 .btns {
+  margin-top: -40px;
   display: flex;
   padding: 20px;
   justify-content: space-between;
@@ -54,6 +59,11 @@
   box-shadow: 1px 1px 18px #000;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.htmlLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .htmlLogo:hover .cover {
@@ -68,4 +78,30 @@
   align-items: start;
   display: flex;
   flex-direction: column;
+}
+
+.nav-link.active:hover {
+  background-color: rgba(0, 119, 182, 0.2);
+}
+
+.nav-link {
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: grey;
+  font-weight: normal;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 119, 182, 0.1);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background-color: #dd5c3c;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 16px;
 }

@@ -41,14 +41,15 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
       </StyledWrapper>
       <div className="btns">
         <div className="flexText">
-          <p>{template.title}</p>
+          <h5>{template.title}</h5>
 
           <ButtonX
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            onClick={handleClick}
+            handleClick={handleClick}
             buttnText={"Send Now"}
           />
+          
         </div>
 
         <div
@@ -56,7 +57,16 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          HTML
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+            alt="HTML Logo"
+            style={{
+              width: "20px",
+              height: "20px",
+              objectFit: "contain",
+            }}
+          />
+          <p>↑</p>
         </div>
       </div>
     </div>

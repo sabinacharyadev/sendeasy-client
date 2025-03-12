@@ -12,6 +12,7 @@ const templates = [
     //First Template
     id: 1,
     title: "Welcome Email",
+    category: "popular",
     bookImage: template1, // Background for the "book"
     coverImage: template11, // Image for the cover
     html: `<table
@@ -72,7 +73,8 @@ const templates = [
   //second template
   {
     id: 2,
-    title: "Welcome Email",
+    title: "🔥 25% OFF - Limited!",
+    category: "popular",
     bookImage: template2, // Background for the "book"
     coverImage: template22, // Image for the cover
     html: `
@@ -137,7 +139,8 @@ const templates = [
 
   {
     id: 3,
-    title: "Welcome Email",
+    title: "⚠️ Immediate Action Required",
+    category: "announcement",
     bookImage: template3, // Background for the "book"
     coverImage: template33, // Image for the cover
     html: `
@@ -163,6 +166,532 @@ const templates = [
     </tr>
 </table>`,
   },
+
+  // Original templates (id: 1, 2, 3)...
+
+  // ==========================
+  // 4th Template: Product Launch 🚀
+  // ==========================
+  {
+    id: 4,
+    title: "🚀 Product Launch",
+    category: "announcement",
+    bookImage: template1,
+    coverImage: template11,
+    html: `
+    <table
+      style="
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background: #eef6fb;
+        font-family: Arial, sans-serif;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <tr>
+        <td
+          style="
+            background-color: #0077b6;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px;
+          "
+        >
+          <h1>🚀 Introducing Send Easy Prime!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300"
+            alt="Launch"
+            style="width: 100%; display: block"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px">
+          <p style="font-size: 14px; color: #555">
+            Hey NAME 👋, experience the fastest delivery with Send Easy Prime. More reliable 🔒, quicker 🚀, and filled with rewards 🎁.
+          </p>
+          <div style="text-align: center; margin: 20px 0">
+            <a
+              href=""
+              target="_blank"
+              style="
+                padding: 14px 28px;
+                background-color: #0077b6;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+              "
+              >✨ Join Prime Now</a
+            >
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 5th Template: Festival Greetings 🎉
+  // ==========================
+  {
+    id: 5,
+    title: "Festival Greetings 🎉",
+    category: "festival",
+    bookImage: template2,
+    coverImage: template22,
+    html: `
+    <table
+      style="
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fffbea;
+        font-family: Arial, sans-serif;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <tr>
+        <td style="text-align: center; padding: 30px">
+          <h1 style="color: #f4a261">🎉 Happy Holidays, NAME!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://images.pexels.com/photos/1666065/pexels-photo-1666065.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300"
+            alt="Holiday"
+            style="width: 100%; display: block"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px">
+          <p style="font-size: 14px; color: #555">
+            Wishing you peace, joy, and prosperity this festive season from all of us at Send Easy 🎁. Check out our festive offers now!
+          </p>
+          <div style="text-align: center; margin: 20px 0">
+            <a
+              href=""
+              target="_blank"
+              style="
+                padding: 14px 28px;
+                background-color: #f4a261;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+              "
+              >🎁 Explore Offers</a
+            >
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 6th Template: Flash Sale ⏰
+  // ==========================
+  {
+    id: 6,
+    title: "Flash Sale ⏰",
+    bookImage: template3,
+    category: "popular",
+    coverImage: template33,
+    html: `
+    <table
+      style="
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <tr>
+        <td
+          style="
+            background: #dc2626;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+          "
+        >
+          <h1>⏰ Flash Sale! 50% OFF</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://images.pexels.com/photos/5632396/pexels-photo-5632396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300"
+            alt="Flash Sale"
+            style="width: 100%; display: block"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px; text-align: center">
+          <p style="font-size: 14px; color: #555">
+            NAME, your chance to save BIG 💸 is here! Enjoy up to 50% OFF on Send Easy services today only!
+          </p>
+          <div style="margin-top: 20px">
+            <a
+              href=""
+              target="_blank"
+              style="
+                padding: 14px 28px;
+                background-color: #dc2626;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+              "
+              >🛍️ Grab Deal Now</a
+            >
+          </div>
+          <p style="font-size: 12px; color: #aaa; margin-top: 20px">
+            Offer ends soon! Don't miss out.
+          </p>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 7th Template: Thank You ❤️
+  // ==========================
+  {
+    id: 7,
+    title: "Thank You ❤️",
+    category: "popular",
+    bookImage: template1,
+    coverImage: template11,
+    html: `
+    <table
+      style="
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        font-family: Arial, sans-serif;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <tr>
+        <td style="text-align: center; padding: 30px">
+          <h1 style="color: #28a745">❤️ Thank You, NAME!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300"
+            alt="Thank You"
+            style="width: 100%; display: block"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px; text-align: center">
+          <p style="font-size: 14px; color: #555">
+            We appreciate your support and trust in Send Easy. Your satisfaction is our priority and we’re always here for you.
+          </p>
+          <div style="margin-top: 20px">
+            <a
+              href=""
+              target="_blank"
+              style="
+                padding: 14px 28px;
+                background-color: #28a745;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+              "
+              >🌟 Explore More Services</a
+            >
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  {
+    id: 8,
+    title: "Order Confirmation ✅",
+    category: "popular",
+    bookImage: template1,
+    coverImage: template11,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#ffffff;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#4CAF50;color:#ffffff;text-align:center;padding:30px;">
+          <h1>✅ Order Confirmed!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/4506077/pexels-photo-4506077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Order Confirmed" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">Hi NAME, your order #12345 has been successfully placed! 🎉</p>
+          <p style="font-size:14px;color:#555;">Thank you for choosing Send Easy. We’ll notify you as soon as your package ships 🚚.</p>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#4CAF50;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">📦 View Order</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 9th Template: Shipping Update 🚚
+  // ==========================
+  {
+    id: 9,
+    title: "Shipping Update 🚚",
+    bookImage: template2,
+    category: "announcement",
+    coverImage: template22,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#eef6fb;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#0077b6;color:#ffffff;text-align:center;padding:30px;">
+          <h1>🚚 Your Order is on the Way!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/6169670/pexels-photo-6169670.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Shipping" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;">
+          <p style="font-size:14px;color:#555;">Hey NAME, your order is on its way and should arrive soon! 🚀</p>
+          <p style="font-size:14px;color:#555;">Track your shipment and stay updated in real time.</p>
+          <div style="text-align:center;margin:20px 0;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#0077b6;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔎 Track Package</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 10th Template: Feedback Request ⭐
+  // ==========================
+  {
+    id: 10,
+    title: "Feedback Request ⭐",
+    category: "announcement",
+    bookImage: template3,
+    coverImage: template33,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#ffffff;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#f4a261;color:#ffffff;text-align:center;padding:30px;">
+          <h1>⭐ We Value Your Feedback!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Feedback" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">Hi NAME, we’d love to hear about your experience with Send Easy!</p>
+          <p style="font-size:14px;color:#555;">It only takes a minute and helps us improve 🌟.</p>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#f4a261;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">📝 Leave Feedback</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 11th Template: Subscription Renewal 🔔
+  // ==========================
+  {
+    id: 11,
+    title: "Subscription Renewal 🔔",
+    category: "announcement",
+    bookImage: template1,
+    coverImage: template11,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#fffbea;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#dc2626;color:#ffffff;text-align:center;padding:30px;">
+          <h1>🔔 Renew Your Subscription!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Renewal" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">Hi NAME, your Send Easy subscription is about to expire. Renew today to keep enjoying premium features 🚀!</p>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#dc2626;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔄 Renew Now</a>
+          </div>
+          <p style="font-size:12px;color:#aaa;margin-top:20px;">Need help? Contact our support team anytime.</p>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  {
+    id: 12,
+    title: "Birthday Wishes 🎂",
+    category: "festival",
+    bookImage: template1,
+    coverImage: template11,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#fff9f0;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#ff6f61;color:#ffffff;text-align:center;padding:30px;">
+          <h1>🎂 Happy Birthday, NAME!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/207216/pexels-photo-207216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Birthday" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">We at Send Easy wish you a fantastic day full of joy, surprises, and happiness! 🎉</p>
+          <p style="font-size:14px;color:#555;">As a gift, enjoy an exclusive <strong>20% OFF</strong> on your next delivery 🎁.</p>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#ff6f61;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🎉 Claim Your Gift</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 13th Template: New Feature Announcement 🛠️
+  // ==========================
+  {
+    id: 13,
+    title: "New Feature  🛠️",
+    bookImage: template2,
+    category: "announcement",
+    coverImage: template22,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#eef6fb;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#264653;color:#ffffff;text-align:center;padding:30px;">
+          <h1>🛠️ We've Added New Features!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="New Features" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">Hi NAME, we've rolled out exciting new features to make your Send Easy experience even better 🚀.</p>
+          <ul style="text-align:left; color:#555;">
+            <li>📦 Real-time delivery tracking</li>
+            <li>🔐 Enhanced security options</li>
+            <li>💬 24/7 Live Chat Support</li>
+          </ul>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#264653;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🚀 Explore Now</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 14th Template: Referral Invite 🎁
+  // ==========================
+  {
+    id: 14,
+    title: "Referral Invite 🎁",
+    category: "popular",
+    bookImage: template3,
+    coverImage: template33,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#ffffff;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#00a896;color:#ffffff;text-align:center;padding:30px;">
+          <h1>🎁 Invite & Earn Rewards!</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/3184427/pexels-photo-3184427.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Referral" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">Hi NAME, refer your friends to Send Easy and earn <strong>$10 credit</strong> for every signup! 🙌</p>
+          <p style="font-size:14px;color:#555;">Your friends will also get an exclusive <strong>15% discount</strong> on their first delivery 🎉.</p>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#00a896;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔗 Refer Now</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+
+  // ==========================
+  // 15th Template: Service Interruption Notice ⚠️
+  // ==========================
+  {
+    id: 15,
+    title: "Service Interruption ⚠️",
+    category: "announcement",
+    bookImage: template1,
+    coverImage: template11,
+    html: `
+    <table style="width:100%;max-width:600px;margin:0 auto;background:#fff3e6;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <tr>
+        <td style="background-color:#ff6f61;color:#ffffff;text-align:center;padding:30px;">
+          <h1>⚠️ Service Update</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300" alt="Service Interruption" style="width:100%;display:block;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px;text-align:center;">
+          <p style="font-size:14px;color:#555;">Hi NAME, due to scheduled maintenance, Send Easy services may experience temporary interruptions on DATE 🕒.</p>
+          <p style="font-size:14px;color:#555;">We apologize for any inconvenience caused and appreciate your understanding.</p>
+          <div style="margin-top:20px;">
+            <a href="" target="_blank" style="padding:14px 28px;background-color:#ff6f61;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">ℹ️ Learn More</a>
+          </div>
+        </td>
+      </tr>
+    </table>`,
+  },
+  
 ];
 
 export default templates;
