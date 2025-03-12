@@ -1,5 +1,6 @@
 import DisplayCard from "../Components/EmailDisplayCard";
 import NavBar from "../Components/NavBar";
+import templates from "../Data/templates";
 
 const HomePage = () => {
   return (
@@ -22,7 +23,9 @@ const HomePage = () => {
         <div>Explore more</div>
       </div>
       <div className="cardContainer">
-        <DisplayCard />
+        {templates.map((template) => (
+          <DisplayCard key={templates.id} template={template} />
+        ))}
       </div>
     </div>
   );
