@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 //import rainyImage from "../assets/rainy.jpg"; // <-- adjust based on your folder structure
 import { useNavigate } from "react-router";
@@ -6,6 +6,7 @@ import ButtonX from "./ButtonX";
 import Tooltip from "./HtmlLogo";
 
 const DisplayCard = ({ template, setSelectedTemplate }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -15,7 +16,10 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
 
   return (
     <div>
-      <StyledWrapper onClick={handleClick} $background={template.bookImage}>
+      <StyledWrapper
+        $background={template.bookImage}
+        $isHovered={isHovered} // <-- Pass hover state to styled component
+      >
         <div
           className="book"
           style={{
@@ -25,7 +29,6 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
             marginBottom: "2rem",
           }}
         >
-          <p>{template.title}</p>
           <div
             className="cover"
             style={{
@@ -33,13 +36,29 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-          >
-            <p>TEMPLATE IMAGE</p>
-          </div>
+          ></div>
         </div>
       </StyledWrapper>
-      <ButtonX buttonText={"Customize Email"} handleClick={handleClick} />
-      <div className="html"> {/* <Tooltip /> */}</div>
+      <div className="btns">
+        <div className="flexText">
+          <p>{template.title}</p>
+
+          <ButtonX
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={handleClick}
+            buttnText={"Send Now"}
+          />
+        </div>
+
+        <div
+          className="htmlLogo"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          HTML
+        </div>
+      </div>
     </div>
   );
 };
@@ -78,11 +97,16 @@ const StyledWrapper = styled.div`
     background-position: center;
     background-size: cover;
     top: 0;
+    transform: ${(props) =>
+      props.$isHovered ? "rotateY(-80deg)" : "rotateY(0deg)"};
+    transition: all 0.5s;
     position: absolute;
     background-color: lightgray;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
     cursor: pointer;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -101,13 +125,8 @@ const StyledWrapper = styled.div`
     -ms-flex-pack: center;
     justify-content: center;
   }
-
-  .book:hover .cover {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
-    transform: rotatey(-80deg);
+  .htmlLogo {
+    cursor: pointer;
   }
 
   p {

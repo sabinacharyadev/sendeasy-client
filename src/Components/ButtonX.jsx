@@ -30,8 +30,8 @@ const ButtonX = ({ buttonText, handleClick }) => {
 const StyledWrapper = styled.div`
   button {
     font-family: inherit;
-    font-size: 20px;
-    background: royalblue;
+    font-size: 9px;
+    background: orange;
     color: white;
     padding: 0.7em 1em;
     padding-left: 0.9em;
