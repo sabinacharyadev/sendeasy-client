@@ -38,5 +38,10 @@
 }
 
 .cardContainer {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
   padding: 30px;
 }
+

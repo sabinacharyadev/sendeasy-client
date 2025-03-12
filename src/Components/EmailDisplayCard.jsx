@@ -1,17 +1,52 @@
 import React from "react";
 import styled from "styled-components";
 import rainyImage from "../assets/rainy.jpg"; // <-- adjust based on your folder structure
+import { useNavigate } from "react-router";
+import ButtonX from "./ButtonX";
+import Tooltip from "./HtmlLogo";
 
-const DisplayCard = () => {
+const DisplayCard = ({ template }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/send-email", {
+      state: {
+        templateHtml: template.html,
+        title: template.title,
+      },
+    });
+  };
+
   return (
-    <StyledWrapper background={rainyImage}>
-      <div className="book">
-        <p>HTML CODE Image</p>
-        <div className="cover">
-          <p>TEMPLATE IMAGE</p>
+    <div>
+      <StyledWrapper onClick={handleClick} $background={template.bookImage}>
+        <div
+          className="book"
+          style={{
+            backgroundImage: `url(${template.coverImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "left",
+          }}
+        >
+          <p>{template.title}</p>
+          <div
+            className="cover"
+            style={{
+              backgroundImage: `url(${template.bookImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <p>TEMPLATE IMAGE</p>
+          </div>
         </div>
+      </StyledWrapper>
+      <ButtonX buttnText={"Send Now"} />
+      <div className="html">
+        {" "}
+        {/* <Tooltip /> */}
       </div>
-    </StyledWrapper>
+    </div>
   );
 };
 
@@ -45,6 +80,9 @@ const StyledWrapper = styled.div`
   }
 
   .cover {
+    background-image: url(${(props) => props.background});
+    background-position: center;
+    background-size: cover;
     top: 0;
     position: absolute;
     background-color: lightgray;
