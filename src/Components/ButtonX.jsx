@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonX = ({ buttnText }) => {
+const ButtonX = ({ buttnText, onClick }) => {
   return (
     <StyledWrapper>
-      <button>
+      <button onClick={onClick}>
         <div className="svg-wrapper-1">
           <div className="svg-wrapper">
             <svg
@@ -30,8 +30,8 @@ const ButtonX = ({ buttnText }) => {
 const StyledWrapper = styled.div`
   button {
     font-family: inherit;
-    font-size: 20px;
-    background: royalblue;
+    font-size: 9px;
+    background: orange;
     color: white;
     padding: 0.7em 1em;
     padding-left: 0.9em;
