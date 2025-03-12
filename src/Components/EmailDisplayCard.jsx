@@ -9,16 +9,7 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(
-      "/send-email"
-      // ,
-      //  {
-      // state: {
-      //   templateHtml: template.html,
-      //   title: template.title,
-      // },
-      //  }
-    );
+    navigate("/send-email");
     setSelectedTemplate(template);
   };
 
@@ -47,7 +38,7 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
           </div>
         </div>
       </StyledWrapper>
-      <ButtonX buttonText={"Send Now"} handleClick={handleClick} />
+      <ButtonX buttonText={"Customize Email"} handleClick={handleClick} />
       <div className="html"> {/* <Tooltip /> */}</div>
     </div>
   );
