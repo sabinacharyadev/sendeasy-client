@@ -39,7 +39,7 @@ const templates = [
       <tr>
         <td style="padding: 30px; text-align: center">
           <h1 style="color: #2a9d8f; margin-bottom: 10px">
-            🌸 Welcome, ${name}!
+            🌸 Welcome, NAME!
           </h1>
           <p style="font-size: 16px; color: #555; margin-bottom: 20px">
             Welcome to Send Easy! 🌿 We're excited to have you onboard. Let's
@@ -98,7 +98,7 @@ const templates = [
           "
         >
           <h1>🔥 25% OFF - Limited Time!</h1>
-          <p>Special Discount Just for You, ${name}!</p>
+          <p>Special Discount Just for You, NAME!</p>
         </td>
       </tr>
       <tr>
@@ -137,7 +137,7 @@ const templates = [
 
   {
     id: 3,
-    title: "Welcome Emai",
+    title: "Welcome Email",
     bookImage: template3, // Background for the "book"
     coverImage: template33, // Image for the cover
     html: `

@@ -1,20 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import rainyImage from "../assets/rainy.jpg"; // <-- adjust based on your folder structure
+//import rainyImage from "../assets/rainy.jpg"; // <-- adjust based on your folder structure
 import { useNavigate } from "react-router";
 import ButtonX from "./ButtonX";
 import Tooltip from "./HtmlLogo";
 
-const DisplayCard = ({ template }) => {
+const DisplayCard = ({ template, setSelectedTemplate }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/send-email", {
-      state: {
-        templateHtml: template.html,
-        title: template.title,
-      },
-    });
+    navigate(
+      "/send-email"
+      // ,
+      //  {
+      // state: {
+      //   templateHtml: template.html,
+      //   title: template.title,
+      // },
+      //  }
+    );
+    setSelectedTemplate(template);
   };
 
   return (
@@ -26,6 +31,7 @@ const DisplayCard = ({ template }) => {
             backgroundImage: `url(${template.coverImage})`,
             backgroundSize: "cover",
             backgroundPosition: "left",
+            marginBottom: "2rem",
           }}
         >
           <p>{template.title}</p>
@@ -41,11 +47,8 @@ const DisplayCard = ({ template }) => {
           </div>
         </div>
       </StyledWrapper>
-      <ButtonX buttnText={"Send Now"} />
-      <div className="html">
-        {" "}
-        {/* <Tooltip /> */}
-      </div>
+      <ButtonX buttonText={"Send Now"} handleClick={handleClick} />
+      <div className="html"> {/* <Tooltip /> */}</div>
     </div>
   );
 };

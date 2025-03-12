@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonX = ({ buttnText }) => {
+const ButtonX = ({ buttonText, handleClick }) => {
   return (
     <StyledWrapper>
-      <button>
+      <button onClick={handleClick}>
         <div className="svg-wrapper-1">
           <div className="svg-wrapper">
             <svg
@@ -21,7 +21,7 @@ const ButtonX = ({ buttnText }) => {
             </svg>
           </div>
         </div>
-        <span>{buttnText}</span>
+        <span>{buttonText}</span>
       </button>
     </StyledWrapper>
   );
