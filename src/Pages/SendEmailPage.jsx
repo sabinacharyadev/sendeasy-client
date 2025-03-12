@@ -80,7 +80,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
             </Form.Group>
 
             <Button variant="primary" type="submit">
-              Submit
+              Send Email
             </Button>
           </Form>
           {ReactHtmlParser(customizedTemplate)}
