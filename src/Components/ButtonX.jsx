@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonX = ({ buttnText, handleClick }) => {
+const ButtonX = ({ buttonText, handleClick }) => {
   return (
     <StyledWrapper>
       <button onClick={handleClick}>
@@ -21,7 +21,7 @@ const ButtonX = ({ buttnText, handleClick }) => {
             </svg>
           </div>
         </div>
-        <span>{buttnText}</span>
+        <span>{buttonText}</span>
       </button>
     </StyledWrapper>
   );

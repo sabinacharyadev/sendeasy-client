@@ -13,7 +13,11 @@ const NavBar = ({ currentCategory }) => {
 
   return (
     <div className="nav-container d-flex align-content-center justify-items-between">
-      <div className="logo" style={{ width: "10rem", fontSize: "1.1rem" }}>
+      <div
+        onClick={() => handleCategoryClick("popular")}
+        className="logo"
+        style={{ width: "10rem", fontSize: "1.1rem", cursor: "pointer" }}
+      >
         <p className="m-3">
           <b>SEND EASY</b>
         </p>

@@ -15,7 +15,7 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
   };
 
   return (
-    <div>
+    <div onClick={handleClick}>
       <StyledWrapper
         $background={template.bookImage}
         $isHovered={isHovered} // <-- Pass hover state to styled component
@@ -47,7 +47,7 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             handleClick={handleClick}
-            buttnText={"Send Now"}
+            buttonText={"Send Now"}
           />
         </div>
 
