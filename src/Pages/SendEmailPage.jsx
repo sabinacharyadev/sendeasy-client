@@ -8,14 +8,16 @@ import { toast } from "react-toastify";
 
 const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   const initialData = {
-    email: "",
+    emails: "", // comma-separated emails input
     name: "",
     subject: "",
   };
+
   const [formData, setFormData] = useState(initialData);
-  const { email, name, subject } = formData;
+  const { emails, name, subject } = formData;
+
   const customizedTemplate = selectedTemplate
-    ? selectedTemplate.html.replace("NAME", name)
+    ? selectedTemplate.html.replace(/NAME/g, name)
     : "";
 
   const handleOnChange = (e) => {
@@ -25,69 +27,101 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const emailObject = {
-      emails: [{ email, subject, htmlBody: customizedTemplate }],
-    };
-    const result = await sendEmail(emailObject);
 
-    toast.success(`Email sent to ${result.data.data[0]}`);
-    setFormData(initialData);
-    setSelectedTemplate("");
+    // Parse and validate email list
+    const emailList = emails
+      .split(",")
+      .map((email) => email.trim())
+      .filter((email) => email !== "");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const invalidEmails = emailList.filter((email) => !emailRegex.test(email));
+
+    if (invalidEmails.length > 0) {
+      toast.error(`Invalid email(s): ${invalidEmails.join(", ")}`);
+      return;
+    }
+
+    const emailObject = {
+      emails: emailList.map((email) => ({
+        email,
+        subject,
+        htmlBody: customizedTemplate,
+      })),
+    };
+
+    try {
+      const result = await sendEmail(emailObject);
+      toast.success(`Emails sent to: ${emailList.join(", ")}`);
+      setFormData(initialData);
+      setSelectedTemplate("");
+    } catch (error) {
+      toast.error("Failed to send emails. Please try again.");
+      console.error(error);
+      console.log(emailObject)
+      console.log(selectedTemplate)
+    }
   };
 
+  if (!selectedTemplate) {
+    return <Navigate to="/" />;
+  }
+
   return (
-    <>
-      {selectedTemplate && (
-        <div className="homeContainer">
-          <NavBar />
-          <h2 className="p-4">{selectedTemplate.title}</h2>
-          <Form className="p-4" onSubmit={handleOnSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>To</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleOnChange}
-                placeholder="Enter email"
-                required
-              />
-              <Form.Text className="text-muted"></Form.Text>
-            </Form.Group>
+    <div className="homeContainer">
+      <NavBar />
 
-            <Form.Group className="mb-3" controlId="formName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleOnChange}
-                placeholder="Name"
-                required
-              />
-            </Form.Group>
+      <h2 className="p-4">{selectedTemplate.title}</h2>
 
-            <Form.Group className="mb-3" controlId="formSubject">
-              <Form.Label>Subject</Form.Label>
-              <Form.Control
-                type="text"
-                name="subject"
-                value={subject}
-                onChange={handleOnChange}
-                placeholder="Subject"
-                required
-              />
-            </Form.Group>
+      <Form className="p-4" onSubmit={handleOnSubmit}>
+        <Form.Group className="mb-3" controlId="formEmails">
+          <Form.Label>Recipient Emails</Form.Label>
+          <Form.Control
+            type="text"
+            name="emails"
+            value={emails}
+            onChange={handleOnChange}
+            placeholder="Enter recipient emails separated by commas"
+            required
+          />
+        </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Send Email
-            </Button>
-          </Form>
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleOnChange}
+            placeholder="Recipient Name"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formSubject">
+          <Form.Label>Subject</Form.Label>
+          <Form.Control
+            type="text"
+            name="subject"
+            value={subject}
+            onChange={handleOnChange}
+            placeholder="Email Subject"
+            required
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Send Emails
+        </Button>
+      </Form>
+
+      <div className="p-4">
+        <h3>Email Preview</h3>
+        <div style={{ border: "1px solid #ccc", padding: "20px" }}>
           {ReactHtmlParser(customizedTemplate)}
         </div>
-      )}
-      {!selectedTemplate && <Navigate to={"/"} />}
-    </>
+      </div>
+    </div>
   );
 };
 
