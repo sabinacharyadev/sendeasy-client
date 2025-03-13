@@ -1,10 +1,11 @@
 import { Navigate } from "react-router";
 import NavBar from "../Components/NavBar";
 import ReactHtmlParser from "react-html-parser";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { useState } from "react";
 import { sendEmail } from "../axios/emailAxios";
 import { toast } from "react-toastify";
+import useLoader from "../hooks/useLoader";
 
 const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   const initialData = {
@@ -14,6 +15,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   };
 
   const [formData, setFormData] = useState(initialData);
+  const { isLoading, startLoading, stopLoading } = useLoader(false);
   const { emails, name, subject } = formData;
 
   const customizedTemplate = selectedTemplate
@@ -27,6 +29,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+    startLoading();
 
     const emailList = emails
       .split(",")
@@ -54,9 +57,11 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
       toast.success(`Emails sent to: ${emailList.join(", ")}`);
       setFormData(initialData);
       setSelectedTemplate("");
+      stopLoading();
     } catch (error) {
       toast.error("Failed to send emails. Please try again.");
       console.error(error);
+      stopLoading();
     }
   };
 
@@ -157,7 +162,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
               onMouseOver={(e) => (e.target.style.backgroundColor = "#005f87")}
               onMouseOut={(e) => (e.target.style.backgroundColor = "#0077b6")}
             >
-              🚀 Send Emails
+              {isLoading ? <Spinner animation="border" /> : "🚀 Send Emails"}
             </Button>
           </Form>
 

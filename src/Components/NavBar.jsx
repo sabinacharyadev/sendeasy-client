@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import sendEasyImage from "../assets/sendeasy1.png";
+//import SearchBar from "./SearchBar";
 
 const NavBar = ({ currentCategory }) => {
   const navigate = useNavigate();
@@ -13,9 +12,21 @@ const NavBar = ({ currentCategory }) => {
     currentCategory === category ? "nav-link active" : "nav-link";
 
   return (
-    <div className="nav-container">
-      <div className="logo">
-        {/* <img src={sendEasyImage} alt="Send Easy" /> */}
+    <div className="nav-container d-flex align-content-center justify-items-between">
+      <div className="logo" style={{ width: "10rem", fontSize: "1.1rem" }}>
+        <p className="m-3">
+          <b>SEND EASY</b>
+        </p>
+        {/* <Image
+          src={sendEasyImage}
+          style={{
+            maxHeight: "5rem",
+            maxWidth: "15rem",
+            marginLeft: "-2rem",
+            marginTop: "-1rem",
+          }}
+          alt="Send Easy"
+        /> */}
       </div>
 
       {/* Popular */}
@@ -43,9 +54,9 @@ const NavBar = ({ currentCategory }) => {
       </div>
 
       {/* Search */}
-      <div>
+      {/* <div>
         <SearchBar propPlaceholder={"Search by keyword or category"} />
-      </div>
+      </div> */}
     </div>
   );
 };
