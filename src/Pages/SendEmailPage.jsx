@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   const initialData = {
-    emails: "", // comma-separated emails input
+    emails: "",
     name: "",
     subject: "",
   };
@@ -28,7 +28,6 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
-    // Parse and validate email list
     const emailList = emails
       .split(",")
       .map((email) => email.trim())
@@ -58,8 +57,6 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
     } catch (error) {
       toast.error("Failed to send emails. Please try again.");
       console.error(error);
-      console.log(emailObject)
-      console.log(selectedTemplate)
     }
   };
 
@@ -68,57 +65,118 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   }
 
   return (
-    <div className="homeContainer">
+    <div
+      className="homeContainer"
+      style={{ background: "#f7f9fc", minHeight: "100vh" }}
+    >
       <NavBar />
 
-      <h2 className="p-4">{selectedTemplate.title}</h2>
+      <div
+        style={{
+          maxWidth: "800px",
+          margin: "40px auto",
+          background: "#fff",
+          borderRadius: "12px",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#0077b6",
+            padding: "20px 30px",
+            color: "white",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h2 style={{ margin: 0 }}>{selectedTemplate.title}</h2>
+          <Button variant="light" onClick={() => setSelectedTemplate("")}>
+            Change Template
+          </Button>
+        </div>
 
-      <Form className="p-4" onSubmit={handleOnSubmit}>
-        <Form.Group className="mb-3" controlId="formEmails">
-          <Form.Label>Recipient Emails</Form.Label>
-          <Form.Control
-            type="text"
-            name="emails"
-            value={emails}
-            onChange={handleOnChange}
-            placeholder="Enter recipient emails separated by commas"
-            required
-          />
-        </Form.Group>
+        <div style={{ padding: "30px" }}>
+          <Form onSubmit={handleOnSubmit}>
+            <Form.Group className="mb-4" controlId="formEmails">
+              <Form.Label style={{ fontWeight: "bold" }}>
+                Recipient Emails
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="emails"
+                value={emails}
+                onChange={handleOnChange}
+                placeholder="Enter recipient emails separated by commas"
+                required
+                style={{ padding: "12px", borderRadius: "8px" }}
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formName">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleOnChange}
-            placeholder="Recipient Name"
-            required
-          />
-        </Form.Group>
+            <Form.Group className="mb-4" controlId="formName">
+              <Form.Label style={{ fontWeight: "bold" }}>
+                Recipient Name
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleOnChange}
+                placeholder="Recipient Name"
+                required
+                style={{ padding: "12px", borderRadius: "8px" }}
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formSubject">
-          <Form.Label>Subject</Form.Label>
-          <Form.Control
-            type="text"
-            name="subject"
-            value={subject}
-            onChange={handleOnChange}
-            placeholder="Email Subject"
-            required
-          />
-        </Form.Group>
+            <Form.Group className="mb-4" controlId="formSubject">
+              <Form.Label style={{ fontWeight: "bold" }}>
+                Email Subject
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="subject"
+                value={subject}
+                onChange={handleOnChange}
+                placeholder="Email Subject"
+                required
+                style={{ padding: "12px", borderRadius: "8px" }}
+              />
+            </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Send Emails
-        </Button>
-      </Form>
+            <Button
+              type="submit"
+              style={{
+                backgroundColor: "#0077b6",
+                padding: "12px 24px",
+                fontSize: "16px",
+                borderRadius: "8px",
+                border: "none",
+                transition: "background-color 0.3s ease",
+              }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#005f87")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#0077b6")}
+            >
+              🚀 Send Emails
+            </Button>
+          </Form>
 
-      <div className="p-4">
-        <h3>Email Preview</h3>
-        <div style={{ border: "1px solid #ccc", padding: "20px" }}>
-          {ReactHtmlParser(customizedTemplate)}
+          <hr style={{ margin: "40px 0" }} />
+
+          <h3 style={{ marginBottom: "20px", fontWeight: "bold" }}>
+            Email Preview
+          </h3>
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "8px",
+              padding: "20px",
+              backgroundColor: "#fafafa",
+              minHeight: "300px",
+            }}
+          >
+            {ReactHtmlParser(customizedTemplate)}
+          </div>
         </div>
       </div>
     </div>

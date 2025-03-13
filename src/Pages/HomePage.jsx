@@ -6,14 +6,13 @@ import templates from "../Data/templates";
 
 const HomePage = ({ setSelectedTemplate }) => {
   const location = useLocation();
-  const [categoryFilter, setCategoryFilter] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("popular");
   const [visibleCount, setVisibleCount] = useState(6);
 
+  // If you are using location.state for navigation
   useEffect(() => {
-    if (location.state?.category) {
+    if (location.state && location.state.category) {
       setCategoryFilter(location.state.category);
-    } else {
-      setCategoryFilter(""); // Show all templates if no category is selected
     }
   }, [location.state]);
 
