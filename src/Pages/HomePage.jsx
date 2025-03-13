@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import DisplayCard from "../Components/EmailDisplayCard";
 import NavBar from "../Components/NavBar";
 import templates from "../Data/templates";
+import Footer from "../Components/Footer";
 
 const HomePage = ({ setSelectedTemplate }) => {
   const location = useLocation();
@@ -38,7 +39,7 @@ const HomePage = ({ setSelectedTemplate }) => {
               "Make Announcements That Grab Attention 🚀"}
             {!categoryFilter ||
               (categoryFilter === "popular" &&
-                "Join the 169k+ email marketers already using Really Good Emails")}
+                "Welcome to SendEasy! We make sending emails simple, fast, and stress-free")}
           </h1>
         </div>
 
@@ -53,6 +54,7 @@ const HomePage = ({ setSelectedTemplate }) => {
                 "We’ve got over 15,000+ emails waiting to be collected and shared with your client or team.")}
           </h4>
         </div>
+        <div>Explore More</div>
 
         {/* <div>
           <button
@@ -99,6 +101,7 @@ const HomePage = ({ setSelectedTemplate }) => {
           </button>
         </div>
       )}
+      <Footer />
     </div>
   );
 };

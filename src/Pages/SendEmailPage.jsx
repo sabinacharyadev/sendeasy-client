@@ -6,6 +6,7 @@ import { useState } from "react";
 import { sendEmail } from "../axios/emailAxios";
 import { toast } from "react-toastify";
 import useLoader from "../hooks/useLoader";
+import Footer from "../Components/Footer";
 
 const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   const initialData = {
@@ -184,6 +185,8 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
           </div>
         </div>
       </div>
+      <Footer />
+
     </div>
   );
 };
