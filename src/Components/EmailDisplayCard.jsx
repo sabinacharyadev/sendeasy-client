@@ -49,7 +49,6 @@ const DisplayCard = ({ template, setSelectedTemplate }) => {
             handleClick={handleClick}
             buttnText={"Send Now"}
           />
-          
         </div>
 
         <div

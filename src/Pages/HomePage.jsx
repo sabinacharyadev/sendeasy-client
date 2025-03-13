@@ -54,7 +54,7 @@ const HomePage = ({ setSelectedTemplate }) => {
           </h4>
         </div>
 
-        <div>
+        {/* <div>
           <button
             style={{
               padding: "12px 24px",
@@ -68,7 +68,7 @@ const HomePage = ({ setSelectedTemplate }) => {
           >
             Explore more
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="cardContainer">

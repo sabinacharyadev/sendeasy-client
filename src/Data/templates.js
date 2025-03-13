@@ -65,6 +65,7 @@ const templates = [
             Looking forward to a fantastic journey together! <br />
             — The Send Easy Team
           </p>
+          <p style="font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -132,6 +133,7 @@ const templates = [
           <p style="font-size: 12px; color: #aaa; text-align: center">
             Offer ends. Don't miss it!
           </p>
+         <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -141,7 +143,8 @@ const templates = [
     id: 3,
     title: "⚠️ Immediate Action Required",
     category: "announcement",
-    bookImage: template3, // Background for the "book"
+    bookImage:
+      "https://i.postimg.cc/YC5fWdrR/Screenshot-2025-03-13-at-5-35-17-pm.png", // Background for the "book"
     coverImage: template33, // Image for the cover
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#fff0f0;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.15);">
@@ -162,6 +165,7 @@ const templates = [
                 <a href="" target="_blank" style="padding:14px 28px;background-color:#d62828;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔐 Verify Now</a>
             </div>
             <p style="font-size:12px;color:#aaa;text-align:center;">Need help? Contact Send Easy Support.</p>
+                     <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
     </tr>
 </table>`,
@@ -176,7 +180,8 @@ const templates = [
     id: 4,
     title: "🚀 Product Launch",
     category: "announcement",
-    bookImage: template1,
+    bookImage:
+      "https://i.postimg.cc/VL5jZx54/Screenshot-2025-03-13-at-5-36-05-pm.png",
     coverImage: template11,
     html: `
     <table
@@ -231,6 +236,7 @@ const templates = [
               "
               >✨ Join Prime Now</a
             >
+                     <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
           </div>
         </td>
       </tr>
@@ -244,7 +250,8 @@ const templates = [
     id: 5,
     title: "Festival Greetings 🎉",
     category: "festival",
-    bookImage: template2,
+    bookImage:
+      "https://i.postimg.cc/2SMTxzw4/Screenshot-2025-03-13-at-5-33-55-pm.png",
     coverImage: template22,
     html: `
     <table
@@ -292,6 +299,7 @@ const templates = [
               "
               >🎁 Explore Offers</a
             >
+                     <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
           </div>
         </td>
       </tr>
@@ -364,6 +372,7 @@ const templates = [
           <p style="font-size: 12px; color: #aaa; margin-top: 20px">
             Offer ends soon! Don't miss out.
           </p>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -376,7 +385,8 @@ const templates = [
     id: 7,
     title: "Thank You ❤️",
     category: "popular",
-    bookImage: template1,
+    bookImage:
+      "https://i.postimg.cc/nrNtx8xB/Screenshot-2025-03-13-at-5-28-00-pm.png",
     coverImage: template11,
     html: `
     <table
@@ -424,6 +434,7 @@ const templates = [
               "
               >🌟 Explore More Services</a
             >
+                     <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
           </div>
         </td>
       </tr>
@@ -434,7 +445,8 @@ const templates = [
     id: 8,
     title: "Order Confirmation ✅",
     category: "popular",
-    bookImage: template1,
+    bookImage:
+      "https://i.postimg.cc/d11MTQtG/Screenshot-2025-03-13-at-5-29-01-pm.png",
     coverImage: template11,
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#ffffff;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
@@ -455,6 +467,7 @@ const templates = [
           <div style="margin-top:20px;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#4CAF50;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">📦 View Order</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -466,7 +479,8 @@ const templates = [
   {
     id: 9,
     title: "Shipping Update 🚚",
-    bookImage: template2,
+    bookImage:
+      "https://i.postimg.cc/KY7LgFsc/Screenshot-2025-03-13-at-5-37-07-pm.png",
     category: "announcement",
     coverImage: template22,
     html: `
@@ -488,6 +502,7 @@ const templates = [
           <div style="text-align:center;margin:20px 0;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#0077b6;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔎 Track Package</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -500,7 +515,8 @@ const templates = [
     id: 10,
     title: "Feedback Request ⭐",
     category: "announcement",
-    bookImage: template3,
+    bookImage:
+      "https://i.postimg.cc/Xqrpx0xC/Screenshot-2025-03-13-at-5-38-11-pm.png",
     coverImage: template33,
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#ffffff;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
@@ -521,6 +537,7 @@ const templates = [
           <div style="margin-top:20px;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#f4a261;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">📝 Leave Feedback</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -533,7 +550,8 @@ const templates = [
     id: 11,
     title: "Subscription Renewal 🔔",
     category: "announcement",
-    bookImage: template1,
+    bookImage:
+      "https://i.postimg.cc/sXXXDRkN/Screenshot-2025-03-13-at-5-39-40-pm.png",
     coverImage: template11,
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#fffbea;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1);">
@@ -554,7 +572,9 @@ const templates = [
             <a href="" target="_blank" style="padding:14px 28px;background-color:#dc2626;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔄 Renew Now</a>
           </div>
           <p style="font-size:12px;color:#aaa;margin-top:20px;">Need help? Contact our support team anytime.</p>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
+        
       </tr>
     </table>`,
   },
@@ -563,7 +583,8 @@ const templates = [
     id: 12,
     title: "Birthday Wishes 🎂",
     category: "festival",
-    bookImage: template1,
+    bookImage:
+      "https://i.postimg.cc/sx40ntX3/Screenshot-2025-03-13-at-5-33-04-pm.png",
     coverImage: template11,
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#fff9f0;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1);">
@@ -584,6 +605,7 @@ const templates = [
           <div style="margin-top:20px;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#ff6f61;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🎉 Claim Your Gift</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -595,7 +617,8 @@ const templates = [
   {
     id: 13,
     title: "New Feature  🛠️",
-    bookImage: template2,
+    bookImage:
+      "https://i.postimg.cc/2jg4JHvD/Screenshot-2025-03-13-at-5-40-48-pm.png",
     category: "announcement",
     coverImage: template22,
     html: `
@@ -621,6 +644,7 @@ const templates = [
           <div style="margin-top:20px;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#264653;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🚀 Explore Now</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -633,7 +657,8 @@ const templates = [
     id: 14,
     title: "Referral Invite 🎁",
     category: "popular",
-    bookImage: template3,
+    bookImage:
+      "https://i.postimg.cc/jSxrrh08/Screenshot-2025-03-13-at-5-30-39-pm.png",
     coverImage: template33,
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#ffffff;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
@@ -654,6 +679,7 @@ const templates = [
           <div style="margin-top:20px;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#00a896;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">🔗 Refer Now</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
@@ -666,7 +692,8 @@ const templates = [
     id: 15,
     title: "Service Interruption ⚠️",
     category: "announcement",
-    bookImage: template1,
+    bookImage:
+      "https://i.postimg.cc/Jz5ZsMFr/Screenshot-2025-03-13-at-5-41-37-pm.png",
     coverImage: template11,
     html: `
     <table style="width:100%;max-width:600px;margin:0 auto;background:#fff3e6;font-family:Arial,sans-serif;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
@@ -687,11 +714,11 @@ const templates = [
           <div style="margin-top:20px;">
             <a href="" target="_blank" style="padding:14px 28px;background-color:#ff6f61;color:#fff;text-decoration:none;border-radius:4px;font-weight:bold;">ℹ️ Learn More</a>
           </div>
+                   <p style="text-align: center; font-size: 12px; color: #aaa; margin-top: 20px">No longer want to receive these emails? <a href="http://localhost:5173">Unsubscribe.</a></p>
         </td>
       </tr>
     </table>`,
   },
-  
 ];
 
 export default templates;
