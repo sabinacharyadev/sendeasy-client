@@ -41,7 +41,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
     const invalidEmails = emailList.filter((email) => !emailRegex.test(email));
 
     if (invalidEmails.length > 0) {
-      toast.error(`Invalid email(s): ${invalidEmails.join(", ")}`);
+      toast.error(`Invalid email: ${invalidEmails.join(", ")}`);
       return;
     }
 
@@ -55,12 +55,12 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
 
     try {
       const result = await sendEmail(emailObject);
-      toast.success(`Emails sent to: ${emailList.join(", ")}`);
+      toast.success(`Email sent to: ${emailList.join(", ")}`);
       setFormData(initialData);
       setSelectedTemplate("");
       stopLoading();
     } catch (error) {
-      toast.error("Failed to send emails. Please try again.");
+      toast.error("Failed to send email. Please try again.");
       console.error(error);
       stopLoading();
     }
@@ -107,14 +107,15 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
           <Form onSubmit={handleOnSubmit}>
             <Form.Group className="mb-4" controlId="formEmails">
               <Form.Label style={{ fontWeight: "bold" }}>
-                Recipient Emails
+                Recipient Email
               </Form.Label>
               <Form.Control
                 type="text"
                 name="emails"
                 value={emails}
                 onChange={handleOnChange}
-                placeholder="Enter recipient emails separated by commas"
+                //                placeholder="Enter recipient emails separated by commas"
+                placeholder="Enter recipient email"
                 required
                 style={{ padding: "12px", borderRadius: "8px" }}
               />
@@ -163,7 +164,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
               onMouseOver={(e) => (e.target.style.backgroundColor = "#005f87")}
               onMouseOut={(e) => (e.target.style.backgroundColor = "#0077b6")}
             >
-              {isLoading ? <Spinner animation="border" /> : "🚀 Send Emails"}
+              {isLoading ? <Spinner animation="border" /> : "🚀 Send Email"}
             </Button>
           </Form>
 
@@ -186,7 +187,6 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
         </div>
       </div>
       <Footer />
-
     </div>
   );
 };
