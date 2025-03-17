@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const API_BASE_URL = import.meta.env.PROD
-  ? ""
+  ? "https://sendeasy-api.vercel.app"
   : import.meta.env.VITE_BASE_API_URL;
 
 const EMAIL_ENDPOINT = "/api/v1/email";
