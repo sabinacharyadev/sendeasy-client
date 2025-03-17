@@ -55,7 +55,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
 
     try {
       const result = await sendEmail(emailObject);
-      toast.success(`Email sent to: ${emailList.join(", ")}`);
+      toast.success(`Email sent to: ${result.join(", ")}`);
       setFormData(initialData);
       setSelectedTemplate("");
       stopLoading();
