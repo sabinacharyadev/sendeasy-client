@@ -55,11 +55,14 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
 
     try {
       const result = await sendEmail(emailObject);
-      toast.success(`Email sent to: ${result.join(", ")}`);
+      toast.success(`Email sent to: ${result.data.data.join(", ")}`);
       setFormData(initialData);
       setSelectedTemplate("");
       stopLoading();
     } catch (error) {
+      if (error.code === "ERR_NETWORK") {
+        console.log("server error");
+      }
       toast.error("Failed to send email. Please try again.");
       console.error(error);
       stopLoading();
