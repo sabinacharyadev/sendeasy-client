@@ -15,6 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<BaseLayout />}>
             <Route
+              path="*"
+              element={<HomePage setSelectedTemplate={setSelectedTemplate} />}
+            />
+            <Route
               path=""
               element={<HomePage setSelectedTemplate={setSelectedTemplate} />}
             />
