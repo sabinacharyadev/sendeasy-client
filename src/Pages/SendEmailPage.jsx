@@ -1,12 +1,10 @@
-import { Navigate } from "react-router";
-import NavBar from "../Components/NavBar";
+import { Navigate, useNavigate } from "react-router";
 import ReactHtmlParser from "react-html-parser";
 import { Button, Form, Spinner } from "react-bootstrap";
 import { useState } from "react";
 import { sendEmail } from "../axios/emailAxios";
 import { toast } from "react-toastify";
 import useLoader from "../hooks/useLoader";
-import Footer from "../Components/Footer";
 
 const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
   const initialData = {
@@ -15,6 +13,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
     subject: "",
   };
 
+  const navigate = useNavigate();
   const [formData, setFormData] = useState(initialData);
   const { isLoading, startLoading, stopLoading } = useLoader(false);
   const { emails, name, subject } = formData;
@@ -61,7 +60,7 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
       stopLoading();
     } catch (error) {
       if (error.code === "ERR_NETWORK") {
-        console.log("server error");
+        navigate("/pagenotfound");
       }
       toast.error("Failed to send email. Please try again.");
       console.error(error);

@@ -5,6 +5,7 @@ import SendEmailPage from "./Pages/SendEmailPage";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import BaseLayout from "./layouts/BaseLayout";
+import PageNotFoundPage from "./Pages/PageNotFoundPage";
 
 function App() {
   const [selectedTemplate, setSelectedTemplate] = useState("");
@@ -14,10 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<BaseLayout />}>
-            <Route
-              path="*"
-              element={<HomePage setSelectedTemplate={setSelectedTemplate} />}
-            />
+            <Route path="*" element={<PageNotFoundPage />} />
             <Route
               path=""
               element={<HomePage setSelectedTemplate={setSelectedTemplate} />}
@@ -31,6 +29,7 @@ function App() {
                 />
               }
             />
+            <Route path="pagenotfound" element={<PageNotFoundPage />} />
           </Route>
         </Routes>
       </Router>
