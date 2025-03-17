@@ -78,8 +78,6 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
       className="homeContainer"
       style={{ background: "#f7f9fc", minHeight: "100vh" }}
     >
-      <NavBar />
-
       <div
         style={{
           maxWidth: "800px",
@@ -189,7 +187,6 @@ const SendEmailPage = ({ selectedTemplate, setSelectedTemplate }) => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

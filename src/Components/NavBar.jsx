@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import SearchBar from "./SearchBar";
 
-const NavBar = ({ currentCategory }) => {
+const NavBar = () => {
   const navigate = useNavigate();
-
+  const [currentCategory, setCurrentCategory] = useState("");
   const handleCategoryClick = (category) => {
+    setCurrentCategory(category);
     navigate("/", { state: { category } });
   };
 

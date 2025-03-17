@@ -28,8 +28,6 @@ const HomePage = ({ setSelectedTemplate }) => {
 
   return (
     <div className="homeContainer">
-      <NavBar currentCategory={categoryFilter} />
-
       <div className="heroSection">
         <div>
           <h1>
@@ -54,23 +52,6 @@ const HomePage = ({ setSelectedTemplate }) => {
                 "We’ve got over 15,000+ emails waiting to be collected and shared with your client or team.")}
           </h4>
         </div>
-        <div>Explore More</div>
-
-        {/* <div>
-          <button
-            style={{
-              padding: "12px 24px",
-              backgroundColor: "#0077b6",
-              color: "#fff",
-              border: "none",
-              borderRadius: "6px",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-          >
-            Explore more
-          </button>
-        </div> */}
       </div>
 
       <div className="cardContainer">
@@ -101,7 +82,6 @@ const HomePage = ({ setSelectedTemplate }) => {
           </button>
         </div>
       )}
-      <Footer />
     </div>
   );
 };
