@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Navbar, Container, Nav, Stack } from "react-bootstrap";
 //import SearchBar from "./SearchBar";
 
 const NavBar = () => {
@@ -14,56 +15,54 @@ const NavBar = () => {
     currentCategory === category ? "nav-link active" : "nav-link";
 
   return (
-    <div className="nav-container d-flex align-content-center justify-items-between">
-      <div
-        onClick={() => handleCategoryClick("popular")}
-        className="logo"
-        style={{ width: "10rem", fontSize: "1.1rem", cursor: "pointer" }}
-      >
-        <p className="m-3">
-          <b>SEND EASY</b>
-        </p>
-        {/* <Image
-          src={sendEasyImage}
+    <Navbar expand="sm" className="bg-body-tertiary">
+      <Container className="d-flex flex-column align-items-start flex-sm-row align-items-sm-center justify-content-sm-between">
+        <Navbar.Brand
           style={{
-            maxHeight: "5rem",
-            maxWidth: "15rem",
-            marginLeft: "-2rem",
-            marginTop: "-1rem",
+            width: "10rem",
+            fontSize: "1.1rem",
+            fontWeight: "bold",
+            cursor: "pointer",
           }}
-          alt="Send Easy"
-        /> */}
-      </div>
-
-      {/* Popular */}
-      <div
-        className={getNavClass("popular")}
-        onClick={() => handleCategoryClick("popular")}
-      >
-        Popular
-      </div>
-
-      {/* Festival */}
-      <div
-        className={getNavClass("festival")}
-        onClick={() => handleCategoryClick("festival")}
-      >
-        Festival
-      </div>
-
-      {/* Announcement */}
-      <div
-        className={getNavClass("announcement")}
-        onClick={() => handleCategoryClick("announcement")}
-      >
-        Announcement
-      </div>
-
-      {/* Search */}
-      {/* <div>
-        <SearchBar propPlaceholder={"Search by keyword or category"} />
-      </div> */}
-    </div>
+          onClick={() => handleCategoryClick("popular")}
+        >
+          SEND EASY
+        </Navbar.Brand>
+        <Nav>
+          {/* Popular */}
+          <Navbar.Text>
+            <div
+              className={getNavClass("popular")}
+              onClick={() => handleCategoryClick("popular")}
+            >
+              Popular
+            </div>
+          </Navbar.Text>
+          {/* Festival */}
+          <Navbar.Text>
+            <div
+              className={getNavClass("festival")}
+              onClick={() => handleCategoryClick("festival")}
+            >
+              Festival
+            </div>
+          </Navbar.Text>
+          {/* Announcement */}
+          <Navbar.Text>
+            <div
+              className={getNavClass("announcement")}
+              onClick={() => handleCategoryClick("announcement")}
+            >
+              Announcement
+            </div>
+          </Navbar.Text>
+          {/* Search */}
+          {/* <div>
+      //     <SearchBar propPlaceholder={"Search by keyword or category"} />
+      //   </div> */}
+        </Nav>
+      </Container>
+    </Navbar>
   );
 };
 
