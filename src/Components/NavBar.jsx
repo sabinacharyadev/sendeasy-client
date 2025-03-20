@@ -12,7 +12,7 @@ const NavBar = () => {
   };
 
   const getNavClass = (category) =>
-    currentCategory === category ? "nav-link active" : "nav-link";
+    currentCategory === category ? "nav-link active text-light" : "nav-link";
 
   return (
     <Navbar expand="sm" className="bg-body-tertiary">

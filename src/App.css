@@ -80,10 +80,6 @@
   flex-direction: column;
 }
 
-.nav-link.active:hover {
-  background-color: rgba(0, 119, 182, 0.2);
-}
-
 .nav-link {
   cursor: pointer;
   margin: 0 10px;
