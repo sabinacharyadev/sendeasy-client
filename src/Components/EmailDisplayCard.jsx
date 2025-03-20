@@ -79,8 +79,8 @@ const StyledWrapper = styled.div`
     background-size: cover;
     position: relative;
     border-radius: 10px;
-    width: 400px;
-    height: 500px;
+    width: 300px;
+    height: 400px;
     background-color: whitesmoke;
     -webkit-box-shadow: 1px 1px 12px #000;
     box-shadow: 1px 1px 12px #000;
